@@ -12,7 +12,7 @@ try:
             if(line[-1] == '\n'):
                 line = line[:-1]
             if re.match(r'm[mnvlri]\d{5},\s*[A-Za-z ]+',line) is not None:
-                info = re.split(r',\s*',linija)
+                info = re.split(r',\s*',line)
                 students[info[0]] = info[1]
 except IOError:
     sys.exit("File open failed!")
