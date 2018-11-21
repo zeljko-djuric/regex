@@ -7,7 +7,7 @@ if len(sys.argv) != 2:
 if re.match(r'.+\.txt',sys.argv[1],re.I) is None:
     sys.exit("Extension must be .txt")
 
-re = ri.compile(r'(?i)(\b[A-Za-z]+\b)\s+\1')
+ri = re.compile(r'(?i)(\b[A-Za-z]+\b)\s+\1')
 
 try:
     f = open(sys.argv[1],"r")
