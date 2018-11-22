@@ -18,3 +18,8 @@ for m in regex.finditer(data):
     if url not in visited_directories:
         visit_directory(url)
 
+if len(sys.argv) > 1:
+    home = sys.argv[1]
+else:
+    home = "index.html"
+
