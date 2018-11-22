@@ -23,3 +23,8 @@ if len(sys.argv) > 1:
 else:
     home = "index.html"
 
+visited_directories = []
+visit_directory(home)
+
+for d in visited_directories:
+    print(d)
