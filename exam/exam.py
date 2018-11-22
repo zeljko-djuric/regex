@@ -28,3 +28,7 @@ while m is not None:
     points.append(all_points/2)
     m = re_data.search(data,m.end())
 
+sorted_data = sorted(zip(points, students))
+sorted_data.reverse()
+
+print(sorted_data)
