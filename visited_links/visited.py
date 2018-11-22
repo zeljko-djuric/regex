@@ -9,3 +9,7 @@ def visit_directory(dir):
             data = f.read()
     except IOError:
         sys.exit("File open failed")
+
+
+regex = re.compile(r'<a\s+href\s*=\s*"(.*?)">.*?</a>',re.I | re.S)
+
