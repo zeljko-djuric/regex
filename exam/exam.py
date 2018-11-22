@@ -32,3 +32,12 @@ sorted_data = sorted(zip(points, students))
 sorted_data.reverse()
 
 print(sorted_data)
+
+i = 1
+try:
+    with open("result.txt","w") as f:
+        for(p,s) in sorted_data:
+            f.write(str(i) + ". " + s + ", " + str(p) + "\n")
+            i += 1
+except IOError:
+    sys.exit("File open failed")
