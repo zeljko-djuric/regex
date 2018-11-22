@@ -13,3 +13,8 @@ def visit_directory(dir):
 
 regex = re.compile(r'<a\s+href\s*=\s*"(.*?)">.*?</a>',re.I | re.S)
 
+for m in regex.finditer(data):
+    url = m.group(1)
+    if url not in visited_directories:
+        visit_directory(url)
+
