@@ -21,3 +21,10 @@ r'\s*<td>\s*(?P<theory>\d[1-9]\d|100)</td>'+
 r'\s*</tr>')
 
 m = re_data.search(data)
+
+while m is not None:
+    students.append(m.group('name'))
+    all_points = int(m.group('practical')) + int(m.group('theory'))
+    points.append(all_points/2)
+    m = re_data.search(data,m.end())
+
