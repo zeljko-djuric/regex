@@ -16,3 +16,10 @@ pattern = re.compile(r'{(.*?),\.NE\+([a-z]+):[0-9][a-z]}',re.S)
 
 replace = pattern.sub(r'<\2>\1<\2>',data)
 
+try:
+    with open(sys.argv[1][:-3]+"xml","w") as fxml:
+        fxml.write("<xml>\n")
+        fxml.write(replace)
+        fxml.write("\n</xml>")
+except IOError:
+    sys.exit("write() failed")
