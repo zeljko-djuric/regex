@@ -12,3 +12,7 @@ try:
 except IOError:
     sys.exit('File open failed')
 
+pattern = re.compile(r'{(.*?),\.NE\+([a-z]+):[0-9][a-z]}',re.S)
+
+replace = pattern.sub(r'<\2>\1<\2>',data)
+
